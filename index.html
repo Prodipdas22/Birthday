@@ -111,17 +111,23 @@
     </div>
     <h1>🎉 Happy Birthday Marcy 🎉</h1>
     <h2>Marcy, may your day be filled with smiles, love & magic 💖</h2>
-    <button onclick="showMessage()">🎁 Open Your Surprise</button>
+    <button onclick="playSurprise()">🎁 Open Your Surprise</button>
     <p id="secretMsg" class="hidden">🌟 Dear Rabbit, you’re the brightest star in our sky. Wishing you endless happiness today & forever! 🌟</p>
   </div>
 
-  <audio autoplay loop>
+  <!-- Audio (no autoplay) -->
+  <audio id="bdaySong" loop>
     <source src="birthday-marcy.mp3" type="audio/mpeg">
   </audio>
 
   <script>
-    function showMessage() {
+    function playSurprise() {
+      // Show hidden message
       document.getElementById("secretMsg").classList.remove("hidden");
+
+      // Play music
+      const song = document.getElementById("bdaySong");
+      song.play().catch(err => console.log("Autoplay blocked:", err));
     }
 
     // Balloons 🎈
