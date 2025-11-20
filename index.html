@@ -118,6 +118,10 @@ p.lead{margin-top:8px;font-size:18px;color:#dfe7fa}
 </section>
 
   </div>  <script>
+    // Birthday song
+    const song = new Audio('https://cdn.pixabay.com/download/audio/2022/03/15/audio_7f66b31d07.mp3?filename=happy-birthday-to-you-piano-110397.mp3');
+    song.volume = 0.9;
+
     // Confetti simple implementation
     const canvas = document.getElementById('confetti');
     const ctx = canvas.getContext('2d');
@@ -129,12 +133,18 @@ p.lead{margin-top:8px;font-size:18px;color:#dfe7fa}
     const pieces=[]; for(let i=0;i<120;i++)pieces.push(new Piece());
     let running=false; function step(){ctx.clearRect(0,0,canvas.width,canvas.height); for(let p of pieces){p.y += p.vy; p.x += p.vx; p.angle += p.va; ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.angle); ctx.fillStyle=p.color; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore(); if(p.y>canvas.height+20) p.reset()} if(running) requestAnimationFrame(step)}
 
-    document.getElementById('play').addEventListener('click', ()=>{running=!running; if(running){step(); document.getElementById('play').textContent='Stop Surprise'} else {document.getElementById('play').textContent='Play Surprise'}})
-
-    // Download as HTML
-    document.getElementById('download').addEventListener('click', ()=>{
-      const html = '<!doctype html>\n' + document.documentElement.outerHTML;
-      const blob = new Blob([html], {type:'text/html'});
+    document.getElementById('play').addEventListener('click', ()=>{
+      running = !running;
+      if(running){
+        step();
+        song.currentTime = 0;
+        song.play();
+        document.getElementById('play').textContent='Stop Surprise';
+      } else {
+        song.pause();
+        document.getElementById('play').textContent='Play Surprise';
+      }
+    });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a'); a.href = url; a.download = 'happy-birthday-payel.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
     });
@@ -150,3 +160,4 @@ p.lead{margin-top:8px;font-size:18px;color:#dfe7fa}
     requestAnimationFrame(()=>{document.getElementById('page').style.transition='all 420ms cubic-bezier(.2,.9,.2,1)'; document.getElementById('page').style.opacity=1; document.getElementById('page').style.transform='none'});
   </script></body>
 </html>
+  
