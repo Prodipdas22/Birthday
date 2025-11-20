@@ -1,145 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Rahul 🎂</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday, Payel!</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #f9c5d1, #fbc2eb, #a6c1ee);
-      background-size: 400% 400%;
-      animation: gradientBG 12s ease infinite;
-      overflow-x: hidden;
-      text-align: center;
-      min-height: 100vh;
+    :root{
+      --bg:#0b0f1f;
+      --card:#11182e;
+      --accent:#ff7ea5;
+      --accent2:#ffe089;
+      --glass: rgba(255,255,255,0.08);
     }
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+    html,body{height:100%;margin:0;font-family:'Poppins',system-ui,Roboto}
+    body{
+      display:grid;place-items:center;
+      background:radial-gradient(circle at top,#1a2244,#0b0f1f 70%);
+      color:#fff;
+      padding:20px;
     }
-    .container {
-      position: relative;
-      top: 10vh;
-      color: #fff;
+    .container{
+      width:min(960px,95%);
+      background:var(--glass);
+      border-radius:22px;
+      padding:34px;
+      backdrop-filter:blur(14px) saturate(180%);
+      box-shadow:0 18px 45px rgba(0,0,0,0.45);
+      position:relative;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.08);
+      animation:fadeIn 0.7s ease-out;
     }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-    }
-    h2 {
-      font-size: 1.4em;
-      margin-bottom: 30px;
-    }
-    .photo {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 0 auto 20px;
-      box-shadow: 0 0 25px rgba(255,255,255,0.8), 0 0 40px rgba(255,0,150,0.6);
-      animation: pulse 3s infinite;
-    }
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    @keyframes pulse {
-      0% {box-shadow: 0 0 20px rgba(255,255,255,0.7);}
-      50% {box-shadow: 0 0 40px rgba(255,0,200,0.9);}
-      100% {box-shadow: 0 0 20px rgba(255,255,255,0.7);}
-    }
-    button {
-      padding: 12px 25px;
-      font-size: 1em;
-      border: none;
-      border-radius: 30px;
-      background: #ff66cc;
-      color: #fff;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-    }
-    button:hover {
-      transform: scale(1.1);
-      background: #ff3399;
-    }
-    .hidden {
-      display: none;
-      font-size: 1.3em;
-      margin-top: 20px;
-      animation: fadeIn 2s forwards;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    /* Balloons */
-    .balloon {
-      position: absolute;
-      bottom: -150px;
-      width: 60px;
-      height: 80px;
-      border-radius: 50% 50% 45% 45%;
-      animation: float 6s infinite ease-in;
-    }
-    .balloon::after {
-      content: "";
-      position: absolute;
-      top: 80px;
-      left: 50%;
-      width: 2px;
-      height: 100px;
-      background: #fff;
-    }
-    @keyframes float {
-      0% { transform: translateY(0) rotate(0deg);}
-      50% { transform: translateY(-300px) rotate(6deg);}
-      100% { transform: translateY(-600px) rotate(-6deg);}
-    }
+    @keyframes fadeIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}header{display:flex;align-items:center;gap:20px}
+.badge{
+  width:90px;height:90px;border-radius:26px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--accent),#ff9fc0);
+  box-shadow:0 10px 30px rgba(255,126,165,0.25);
+  font-size:38px;font-weight:700;
+  animation:pop 0.8s ease-out;
+}
+@keyframes pop{0%{transform:scale(0.6)}60%{transform:scale(1.08)}100%{transform:scale(1)}}
+
+h1{margin:0;font-size:32px;font-weight:700}
+p.lead{margin-top:8px;font-size:18px;color:#dfe7fa}
+
+.card{
+  margin-top:22px;
+  background:rgba(255,255,255,0.04);
+  border-radius:16px;
+  padding:22px;
+  backdrop-filter:blur(10px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.06);
+  animation:slideUp 0.7s ease-out;
+}
+@keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+.gift-note{font-size:17px;line-height:1.55;color:#eef2ff;margin:0 0 14px}
+.heart{color:var(--accent)}
+
+.actions{display:flex;gap:14px;margin-top:18px;flex-wrap:wrap}
+.btn{
+  background:var(--accent);
+  border:none;
+  padding:12px 18px;
+  border-radius:14px;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  font-size:15px;
+  transition:0.2s;
+  box-shadow:0 8px 22px rgba(255,126,165,0.2);
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(255,126,165,0.28)}
+.btn.alt{
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.13);
+  box-shadow:none;
+}
+.btn.alt:hover{
+  background:rgba(255,255,255,0.12);
+}
+
+.footer{margin-top:14px;font-size:14px;color:#b9c3dd}
+
+.confetti-canvas{position:absolute;inset:0;pointer-events:none}
+
+@media (max-width:520px){
+  .badge{width:70px;height:70px;font-size:30px;border-radius:18px}
+  .container{padding:22px}
+  h1{font-size:26px}
+}
+
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="photo">
-      <img src="Rahul.jpg" alt="Rohul">
-    </div>
-    <h1>🎉 Happy Birthday Rahul 🎉</h1>
-    <h2>Rahul, may your day be filled with smiles, love & magic 💖</h2>
-    <button onclick="playSurprise()">🎁 Open Your Surprise</button>
-    <p id="secretMsg" class="hidden">🌟 Dear Roohul, you’re the brightest star in our sky. Wishing you endless happiness today & forever! 🌟</p>
+  <div class="container" id="page">
+    <canvas class="confetti-canvas" id="confetti"></canvas>
+    <header>
+      <div class="badge">🎂</div>
+      <div>
+        <h1>Happy Birthday, Payel!</h1>
+        <p class="lead">Wishing you a day full of love, laughter and sweet surprises.</p>
+      </div>
+    </header><section class="card">
+  <p class="gift-note">Happy Birthday! 🎉 You deserve all the happiness in the world. I couldn’t manage a proper gift due to time, but my best wishes are always with you. Have an amazing day! <span class="heart">💕</span></p>
+
+  <div class="actions">
+    <button class="btn" id="play">Play Surprise</button>
+    <button class="btn alt" id="download">Download Page</button>
+    <button class="btn alt" id="share">Copy Message</button>
   </div>
+  <p class="footer">Tip: Click "Play Surprise" for confetti. Use "Download Page" to save this as an HTML file you can share.</p>
+  <p class="gift-note" style="margin-top:16px;font-size:17px;color:#f6f0ff;opacity:0.95;">Thank you so much for inviting me to the cake cutting and celebrating your special day with me — it truly meant a lot. 🎂✨</p>
 
-  <!-- Audio (no autoplay) -->
-  <audio id="bdaySong" loop>
-    <source src="Rahul.mp3" type="audio/mpeg">
-  </audio>
+</section>
 
-  <script>
-    function playSurprise() {
-      // Show hidden message
-      document.getElementById("secretMsg").classList.remove("hidden");
+  </div>  <script>
+    // Confetti simple implementation
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
+    function resize(){canvas.width = window.innerWidth; canvas.height = window.innerHeight}
+    window.addEventListener('resize', resize); resize();
 
-      // Play music
-      const song = document.getElementById("bdaySong");
-      song.play().catch(err => console.log("Autoplay blocked:", err));
-    }
+    function rand(min,max){return Math.random()*(max-min)+min}
+    class Piece{constructor(){this.reset()}reset(){this.x = rand(0,canvas.width);this.y = rand(-canvas.height,0);this.w=rand(6,14);this.h=rand(8,18);this.vy=rand(2,6);this.vx=rand(-1.5,1.5);this.angle=rand(0,Math.PI*2);this.va=rand(-0.1,0.1);const palette=['#ff6b81','#ffd166','#8bd3dd','#c7f9cc','#ffd1ff'];this.color=palette[Math.floor(rand(0,palette.length))]}}
+    const pieces=[]; for(let i=0;i<120;i++)pieces.push(new Piece());
+    let running=false; function step(){ctx.clearRect(0,0,canvas.width,canvas.height); for(let p of pieces){p.y += p.vy; p.x += p.vx; p.angle += p.va; ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.angle); ctx.fillStyle=p.color; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore(); if(p.y>canvas.height+20) p.reset()} if(running) requestAnimationFrame(step)}
 
-    // Balloons 🎈
-    const colors = ["#ff4d6d","#ff9a00","#4dff88","#4da6ff","#ff66cc"];
-    for(let i=0;i<20;i++){
-      let b = document.createElement("div");
-      b.className = "balloon";
-      b.style.left = Math.random()*100 + "vw";
-      b.style.background = colors[Math.floor(Math.random()*colors.length)];
-      b.style.animationDuration = (5 + Math.random()*5) + "s";
-      document.body.appendChild(b);
-    }
-  </script>
-</body>
+    document.getElementById('play').addEventListener('click', ()=>{running=!running; if(running){step(); document.getElementById('play').textContent='Stop Surprise'} else {document.getElementById('play').textContent='Play Surprise'}})
+
+    // Download as HTML
+    document.getElementById('download').addEventListener('click', ()=>{
+      const html = '<!doctype html>\n' + document.documentElement.outerHTML;
+      const blob = new Blob([html], {type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'happy-birthday-payel.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    // Copy message
+    document.getElementById('share').addEventListener('click', async ()=>{
+      const text = `Happy Birthday! 🎉 You deserve all the happiness in the world. I couldn’t manage a proper gift due to time, but my best wishes are always with you. Have an amazing day! 💕`;
+      try{await navigator.clipboard.writeText(text); alert('Message copied to clipboard!')}catch(e){prompt('Copy this message', text)}
+    });
+
+    // Gentle entrance animation
+    document.getElementById('page').style.opacity=0; document.getElementById('page').style.transform='translateY(8px)';
+    requestAnimationFrame(()=>{document.getElementById('page').style.transition='all 420ms cubic-bezier(.2,.9,.2,1)'; document.getElementById('page').style.opacity=1; document.getElementById('page').style.transform='none'});
+  </script></body>
 </html>
